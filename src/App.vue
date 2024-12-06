@@ -32,19 +32,25 @@
     </div>
     <template v-else>
       <template v-if="listData.length || listDataTwo.length"> 
-        <div class="d-block bg-secondary p-4 custom-rounded mb-3">
-          <div class="d-block fw-bold mb-4 h5">On Progress</div>
-          <div class="row">
+        <div class="d-block bg-secondary custom-rounded mb-3 bg-texture">
+          <div class="d-flex align-items-start justify-content-between fw-bold mb-0 bg-gradient p-4 custom-rounded-card-header">
+            <div class="d-flex align-items-center">
+              <img src="@/assets/images/shuttle.png" width="32" class="mx-2" />
+              <div class="ms-2 h5 m-0">On Progress</div>
+            </div>
+            <div>20 Request</div>
+          </div>
+          <div class="row mx-3 mb-4">
             <draggable
               :list="listData"
               :item-key="'id'"
-              class="draggable-list"
+              class="draggable-list my-3"
               :tag="'div'"
               direction="horizontal"
               group="request"
               animation="300">
               <template #item="{ element, index }">
-                <div class="col-xl-3 col-md-6 draggable-item my-3" v-if="index < (listData.length + 1)">
+                <div class="col-xl-3 col-md-6 draggable-item my-2" v-if="index < (listData.length + 1)">
                   <div :class="`card custom-rounded border-0 bg-dark player ${index == 0 ? 'win-effect' : ''}`">
                     <div class="card-header custom-rounded-card-header bg-secondary p-0 border-0">
                       <div class="d-flex justify-content-between align-items-center custom-rounded-card-header" :style="`background: url(${element.hero}); height: 200px; width: 100%; background-size: cover; background-position: center`">
@@ -64,7 +70,7 @@
                               <div :style="{ backgroundImage: `url('${item}')`, width: '40px', height: '40px', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', boxShadow: '0 4px 4px rgba(0, 0, 0, 0.3)', objectFit: 'cover', borderRadius: '50%', backgroundColor: backgroundColor[index + pos] }" ></div>
                             </template>
                           </div>
-                          <div class="text-warning fw-bold">
+                          <div class="text-warning fw-bold" v-if="element.is_vip">
                             <img src="@/assets/images/flash.png" style="width: 30px; height: 30px;" class="img-fluid"> VIP
                           </div>
                         </div>
@@ -79,26 +85,32 @@
                 </div>
               </template>
               <template #footer>
-                <div v-if="listData.length === 0" class="d-flex align-items-center justify-content-center bg-dark custom-rounded w-100 text-center" style="min-height: 100px">
+                <div v-if="listData.length === 0" class="d-flex align-items-center justify-content-center custom-rounded w-100 text-center" style="min-height: 100px; background-color: rgba(0, 0, 0, 0.5);">
                   <i class="mdi mdi-information-outline me-1"></i> Belum ada request yang sedang dikerjakan.
                 </div>
               </template>
             </draggable>
           </div>
         </div>
-        <div class="d-block bg-secondary p-3 custom-rounded mb-3">
-          <div class="d-block fw-bold mb-4 h5">Daftar Antrian</div>
-          <div class="row">
+        <div class="d-block bg-secondary custom-rounded mb-3 bg-texture-2">
+          <div class="d-flex align-items-start justify-content-between fw-bold mb-0 bg-gradient p-4 custom-rounded-card-header">
+            <div class="d-flex align-items-center">
+              <img src="@/assets/images/stack.png" width="32" class="mx-2" />
+              <div class="ms-2 h5 m-0">Daftar Antrian</div>
+            </div>
+            <div>20 Request</div>
+          </div>
+          <div class="row mx-3 mb-4">
               <draggable
                 :list="listDataTwo"
                 :item-key="'id'"
-                class="draggable-list"
+                class="draggable-list my-3"
                 :tag="'div'"
                 group="request"
                 direction="horizontal"
                 animation="300">
                 <template #item="{ element, index }">
-                  <div class="col-xl-3 col-md-6 draggable-item mb-3">
+                  <div class="col-xl-3 col-md-6 draggable-item my-2">
                     <div class="d-none">{{element}}</div>
                     <div :class="`card custom-rounded border-0 bg-dark player`">
                       <div class="card-header custom-rounded-card-header bg-secondary p-0 border-0">
@@ -111,7 +123,7 @@
                             <h4 class="text-warning fw-bold">{{ element.hero_name }}</h4>
                             <div>{{ element.commander }} <span class="badge border border-white custom-rounded ms-1" style="font-size: 9pt">Skill : {{ element.commander_skill }}</span></div>
                             <div class="fw-bold mb-3">{{ element.name }}</div>
-                            <div class="badge bg-secondary">Percobaan 1/3</div>
+                            <!-- <div class="badge bg-secondary">Percobaan 1/3</div> -->
                           </div>
                           <div class="d-flex flex-column justify-content-between align-items-end">
                             <div class="d-flex" style="gap: 4px">
@@ -119,7 +131,7 @@
                                 <div :style="{ backgroundImage: `url('${item}')`, width: '40px', height: '40px', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', boxShadow: '0 4px 4px rgba(0, 0, 0, 0.3)', objectFit: 'cover', borderRadius: '50%', backgroundColor: backgroundColor[index + pos] }" ></div>
                               </template>
                             </div>
-                            <div class="text-warning fw-bold">
+                            <div class="text-warning fw-bold" v-if="element.is_vip">
                               <img src="@/assets/images/flash.png" style="width: 30px; height: 30px;" class="img-fluid"> VIP
                             </div>
                           </div>
@@ -261,6 +273,7 @@ import draggable from "vuedraggable";
 
 import sun from '@/assets/images/heroes/sun.jpg';
 import leomord from '@/assets/images/heroes/leomord.jpg';
+import texture from '@/assets/images/texture.jpeg';
 
 export default {
   data() {
@@ -275,7 +288,8 @@ export default {
           new URL('@/assets/images/emblem/asassin.png', import.meta.url).href
         ],
         hero: sun,
-        status: 'ongoing'
+        status: 'ongoing',
+        is_vip: true,
       },
       {
         id: 2,
@@ -288,7 +302,8 @@ export default {
           new URL('@/assets/images/emblem/marksman.png', import.meta.url).href
         ],
         hero: leomord,
-        status: 'ongoing'
+        status: 'ongoing',
+        is_vip: true,
       }],
       listDataTwo: [{
         id: 3,
@@ -300,7 +315,8 @@ export default {
           new URL('@/assets/images/emblem/asassin.png', import.meta.url).href
         ],
         hero: sun,
-        status: 'ongoing'
+        status: 'ongoing',
+        is_vip: false,
       },
       {
         id: 4,
@@ -313,7 +329,8 @@ export default {
           new URL('@/assets/images/emblem/marksman.png', import.meta.url).href
         ],
         hero: leomord,
-        status: 'ongoing'
+        status: 'ongoing',
+        is_vip: false,
       }],
       fetching: false,
       items: [
@@ -368,7 +385,7 @@ export default {
 .draggable-list {
   display: flex;
   flex-direction: row; /* Atur horizontal */
-  gap: 10px; /* Jarak antar item */
+  gap: 20px; /* Jarak antar item */
   overflow-y: hidden; /* Tambahkan scroll jika item terlalu banyak */
   overflow-x: auto; /* Tambahkan scroll jika item terlalu banyak */
   scrollbar-width: thin; /* For Firefox */
@@ -382,5 +399,19 @@ export default {
 
 .draggable-item:active {
   cursor: grabbing; /* Ubah kursor saat sedang drag */
+}
+
+.bg-texture {
+  background-image: url('@/assets/images/texture.jpeg'); /* Path ke file tekstur */
+  background-size: cover; /* Menyesuaikan ukuran */
+  background-repeat: no-repeat; /* Tidak mengulang tekstur */
+  background-position: center; /* Pusatkan gambar */
+}
+
+.bg-texture-2 {
+  background-image: url('@/assets/images/texture-2.jpeg'); /* Path ke file tekstur */
+  background-size: cover; /* Menyesuaikan ukuran */
+  background-repeat: no-repeat; /* Tidak mengulang tekstur */
+  background-position: center; /* Pusatkan gambar */
 }
 </style>

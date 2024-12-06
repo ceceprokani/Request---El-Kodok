@@ -89,6 +89,14 @@ input[type="number"] {
     margin-bottom: 1rem;
 }
 
+.bg-gradient {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)) !important;
+}
+
+.bg-transparant {
+    background: rgba(0, 0, 0, 0.5) !important;    
+}
+
 /* Tablet: untuk layar dengan lebar minimal 768px */
 @media (min-width: 768px) {
     .title-app {
