@@ -1,0 +1,145 @@
+@import './bootstrap.min.css';
+
+body {
+  font-family: 'Poppins';
+}
+
+.custom-rounded {
+    border-radius: 15px !important;
+}
+
+.custom-rounded-card-header {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+.custom-rounded-card-footer {
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+}
+
+.no-hover:focus {
+    background: none !important; /* atau warna tertentu */
+    border: none !important; /* atau gaya border tertentu */
+    outline: none !important; /* untuk menghilangkan outline jika ada */
+    box-shadow: none !important; /* menghilangkan shadow jika ada */
+    cursor: default !important; /* mengatur agar kursor tetap default */
+}
+
+.bg-black-50 {
+    background-color: #303030;
+}
+
+.btn-circle {
+    border-radius: 50%;
+}
+
+.btn-small {
+    width: 30px;
+    height: 30px;
+}
+
+.btn-medium {
+    width: 45px;
+    height: 45px;
+}
+
+/* Untuk Chrome, Safari, Edge, dan Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Untuk Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.player .show-hover {
+    display: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Efek transisi */
+}
+
+.player:hover .show-hover {
+    display: block; /* Tampilkan elemen saat parent di-hover */
+    opacity: 1; /* Ubah opacity untuk efek fade-in */
+    visibility: visible;
+}
+
+.mobile-hide {
+    display: block;
+}
+
+
+.mobile-show {
+    display: none;
+}
+
+.wave {
+    position: absolute; left:0; bottom:0; top: 16px;
+}
+
+.dropdown-toggle::after {
+    border: none;
+}
+
+.spacer-medium {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Tablet: untuk layar dengan lebar minimal 768px */
+@media (min-width: 768px) {
+    .title-app {
+        font-size: 24px
+    }
+}
+
+/* Tablet: untuk layar dengan lebar minimal 768px */
+@media (max-width: 300px) {
+    .wave {
+        position: absolute; left:0; bottom:0; top: 25px;
+    }
+}
+
+/* Tablet: untuk layar dengan lebar minimal 768px */
+@media (min-width: 400px) and (max-width: 450px) {
+    .wave {
+        position: absolute; left:0; bottom:0; top: 0;
+    }
+}
+
+/* Tablet: untuk layar dengan lebar minimal 768px */
+@media (max-width: 768px) {
+    .mobile-hide {
+        display: none;
+    }
+    .mobile-show {
+        display: block;
+    }
+    .title-app {
+        font-size: 24px
+    }
+}
+
+/* Tablet: untuk layar dengan lebar minimal 768px */
+@media (min-width: 450px) and (max-width: 768px) {
+    .wave {
+        position: absolute; left:0; bottom:0; top: 0;
+    }
+}
+
+/* Tablet: untuk layar dengan lebar minimal 768px */
+@media (min-width: 768px) and (max-width: 988px) {
+    .wave {
+        position: absolute; left:0; bottom:0; top: 12px;
+    }
+}
+
+/* Tablet: untuk layar dengan lebar minimal 768px */
+@media (min-width: 988px) and (max-width: 1200px) {
+    .wave {
+        position: absolute; left:0; bottom:0; top: 2px;
+    }
+}
