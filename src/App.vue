@@ -169,7 +169,7 @@
             <tbody>
               <tr>
                 <td class="text-center">1</td>
-                <td class="fw-bold text-warning">Cecep CauDev <span class="badge bg-warning ms-2 text-dark">VIP</span></td>
+                <td class="fw-bold text-warning">CauDev <span class="badge bg-warning ms-2 text-dark">VIP</span></td>
                 <td>Leomord</td>
                 <td>Cadia</td>
                 <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
@@ -178,7 +178,7 @@
               </tr>
               <tr>
                 <td class="text-center">2</td>
-                <td class="fw-bold text-warning">Cecep CauDev</td>
+                <td class="fw-bold text-warning">CauDev</td>
                 <td>Leomord</td>
                 <td>Cadia</td>
                 <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
@@ -187,7 +187,7 @@
               </tr>
               <tr>
                 <td class="text-center">3</td>
-                <td class="fw-bold text-warning">Cecep CauDev <span class="badge bg-warning ms-2 text-dark">VIP</span></td>
+                <td class="fw-bold text-warning">CauDev <span class="badge bg-warning ms-2 text-dark">VIP</span></td>
                 <td>Leomord</td>
                 <td>Cadia</td>
                 <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
@@ -196,7 +196,7 @@
               </tr>
               <tr>
                 <td class="text-center">4</td>
-                <td class="fw-bold text-warning">Cecep CauDev</td>
+                <td class="fw-bold text-warning">CauDev</td>
                 <td>Leomord</td>
                 <td>Cadia</td>
                 <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
