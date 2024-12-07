@@ -385,7 +385,7 @@ export default {
       backgroundColor: [],
     }
   },
-  components: {draggable, simplebar},
+  components: {draggable},
   computed: {
   },
   mounted() {
