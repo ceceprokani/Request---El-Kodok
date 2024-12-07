@@ -1,8 +1,9 @@
 <template>
-  <div class="container p-3 text-white vh-100">
+  <div class="container p-3 text-white">
     <div class="d-flex my-3 justify-content-between">
-      <div class="d-flex align-items-center text-warning flex-shrink-0 me-3">
+      <div class="d-flex align-items-start text-warning flex-shrink-0 me-3">
         <img src="@/assets/images/logo.png" class="me-3" style="height: 50px;">
+        <div class="custom-rounded-medium text-dark px-3 py-1 bg-warning h5 fw-bold ms-2">EL KODOK GAMING</div>
       </div>
       <div class="d-flex align-items-center">
         <button type="button" class="btn btn-warning custom-rounded fw-bold mobile-hide" data-bs-toggle="modal" data-bs-target="#addData" v-if="listData.length"><i class="mdi mdi-plus me-2"></i>TAMBAH REQUEST</button>
@@ -38,7 +39,7 @@
               <img src="@/assets/images/shuttle.png" width="32" class="mx-2" />
               <div class="ms-2 h5 m-0">On Progress</div>
             </div>
-            <div>20 Request</div>
+            <div>{{ listData.length }} Request</div>
           </div>
           <div class="row mx-3 mb-4">
             <draggable
@@ -50,7 +51,7 @@
               group="request"
               animation="300">
               <template #item="{ element, index }">
-                <div class="col-xl-3 col-md-6 draggable-item my-2" v-if="index < (listData.length + 1)">
+                <div class="col-md-3 draggable-item my-2" v-if="index < (listData.length + 1)">
                   <div :class="`card custom-rounded border-0 bg-dark player ${index == 0 ? 'win-effect' : ''}`">
                     <div class="card-header custom-rounded-card-header bg-secondary p-0 border-0">
                       <div class="d-flex justify-content-between align-items-center custom-rounded-card-header" :style="`background: url(${element.hero}); height: 200px; width: 100%; background-size: cover; background-position: center`">
@@ -98,7 +99,7 @@
               <img src="@/assets/images/stack.png" width="32" class="mx-2" />
               <div class="ms-2 h5 m-0">Daftar Antrian</div>
             </div>
-            <div>20 Request</div>
+            <div>{{ listDataTwo.length }} Request</div>
           </div>
           <div class="row mx-3 mb-4">
               <draggable
@@ -110,8 +111,7 @@
                 direction="horizontal"
                 animation="300">
                 <template #item="{ element, index }">
-                  <div class="col-xl-3 col-md-6 draggable-item my-2">
-                    <div class="d-none">{{element}}</div>
+                  <div class="col-md-3 draggable-item my-2">
                     <div :class="`card custom-rounded border-0 bg-dark player`">
                       <div class="card-header custom-rounded-card-header bg-secondary p-0 border-0">
                         <div class="d-flex justify-content-between align-items-center custom-rounded-card-header" :style="`background: url(${element.hero}); height: 200px; width: 100%; background-size: cover; background-position: center`">
@@ -149,17 +149,64 @@
           </div>
         </div>
         <div class="spacer-medium">&nbsp;</div>
-        <div class="d-block mb-3">Daftar Request Selesai</div>
-        <div class="row">
-          <div class="col-xl-2 col-md-6 mb-3">
-            <div :class="`card custom-rounded border-0 bg-secondary`">
-              <div class="card-header custom-rounded-card-header bg-secondary px-0 py-1" style="position: relative; height: 80px; background-image: url('@/assets/images/empty-box.png')">
-              </div>
-              <div class="card-body">
-              </div>
-            </div>
-          </div>
+        <div class="d-flex justify-content-between">
+          <div class="d-block mb-3 h4">Daftar Request Selesai</div>
+          <div>4 Request</div>
         </div>
+        <div class="table-responsive">
+          <table class="table table-custom-card-dark">
+            <thead>
+              <tr>
+                <th class="text-center">#</th>
+                <th>Nama</th>
+                <th>Hero</th>
+                <th>Emblem</th>
+                <th>Commander</th>
+                <th>Tanggal Request</th>
+                <th>Tanggal Selesai</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">1</td>
+                <td class="fw-bold text-warning">Cecep CauDev <span class="badge bg-warning ms-2 text-dark">VIP</span></td>
+                <td>Leomord</td>
+                <td>Cadia</td>
+                <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
+                <td>27 Desember 2024 09:00</td>
+                <td>28 Desember 2024 09:00</td>
+              </tr>
+              <tr>
+                <td class="text-center">2</td>
+                <td class="fw-bold text-warning">Cecep CauDev</td>
+                <td>Leomord</td>
+                <td>Cadia</td>
+                <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
+                <td>27 Desember 2024 09:00</td>
+                <td>28 Desember 2024 09:00</td>
+              </tr>
+              <tr>
+                <td class="text-center">3</td>
+                <td class="fw-bold text-warning">Cecep CauDev <span class="badge bg-warning ms-2 text-dark">VIP</span></td>
+                <td>Leomord</td>
+                <td>Cadia</td>
+                <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
+                <td>27 Desember 2024 09:00</td>
+                <td>28 Desember 2024 09:00</td>
+              </tr>
+              <tr>
+                <td class="text-center">4</td>
+                <td class="fw-bold text-warning">Cecep CauDev</td>
+                <td>Leomord</td>
+                <td>Cadia</td>
+                <td>Yuki <span class="badge bg-dark ms-2 text-light">Skill: 2</span></td>
+                <td>27 Desember 2024 09:00</td>
+                <td>28 Desember 2024 09:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="spacer-medium">&nbsp;</div>
       </template>
       <div class="row h-75 align-items-center" v-else>
         <div class="col-md-12 text-center">
@@ -196,7 +243,7 @@
         <div class="modal-header border-0">
           <div class="row w-100">
             <div class="col-md-6 m-auto">
-              <h5 class="modal-title text-white" id="gameRulesLabel">PERATURAN PERMAINAN</h5>
+              <h5 class="modal-title text-white fw-bold" id="gameRulesLabel">PERATURAN</h5>
             </div>
           </div>
         </div>
@@ -204,48 +251,35 @@
           <div class="row w-100">
             <div class="col-md-6 m-auto">
               <div class="form-group text-white mb-3" style="line-height: 35px; text-align: justify">
+                <div>*HARAP PERHATIKAN SAMPAI "ketentuan tambahan"</div>
+                <div class="mb-3">*KALO DUIT MASIH PAS-PASAN JANGAN MAKSA REQUEST, KARENA REQUESTAN TIDAK 100% BAKAL BERHASIL. JADI SAYANGI DUIT ANDA WOIII</div>
                 <ol>
                   <li class="mb-3 text-warning fw-bold">
-                    <span>Objektif</span>
-                    <p class="text-white fw-normal">Dapatkan poin tertinggi pada setiap permainan</p>
-                  </li>
-                  <li class="mb-3 text-warning fw-bold">
-                    <span>Ketentuan Permainan</span>
+                    <span>Paket Kapitalis 150K (PRIORITAS)</span>
                     <ol type="a" class="text-white fw-normal">
-                      <li>Terdiri dari 4 pemain</li>
-                      <li>Setiap pemain akan dibagikan 7 kartu</li>
-                      <li>Kartu yang dimainkan adalah kartu angka (2 - 10), kerajaan (jack, queen, king), dan ace. Setiap kartu memiliki poin, diantaranya:</li>
-                      <ol type="i">
-                        <li>Kartu angka bernilai 5 poin</li>
-                        <li>Kartu kerajaan bernilai 10 poin</li>
-                        <li>Kartu ace bernilai 15 poin</li>
-                      </ol>
-                      <li>Dalam setiap permainan, terdapat 1 kartu joker (diambil secara acak dari tumpukan kartu sisa). Kartu joker adalah kartu pamungkas yang memiliki poin fleksibel, diantaranya:</li>
-                      <ol type="i">
-                        <li>Jika dipasangkan dengan kartu 8 dan 9 wajik, maka bisa berperan sebagai kartu angka 10 atau 7 wajik dan bernilai 5 poin</li>
-                        <li>Jika dipasangkan dengan kartu jack dan king hati, maka bisa berperan sebagai kartu queen dan bernilai 10 poin</li>
-                        <li>Jika dipasangkan dengan kartu ace wajik dan ace hati, maka bisa berperan sebagai kartu ace keriting dan atau ace sekop dan bernilai 15 poin</li>
-                      </ol>
-                      <li>Untuk mendapatkan poin awal, setiap pemain harus memiliki kartu seri. Kartu seri adalah 3 atau lebih kartu berurutan dengan simbol yang sama, kecuali ace. Contoh:</li>
-                      <ol type="i">
-                        <li>Kartu 8, 9, 10 wajik</li>
-                        <li>Kartu jack, queen, king hati</li>
-                        <li>Kartu ace wajik, ace hati, ace keriting</li>
-                      </ol>
-                      <li>Jika sampai akhir putaran pemain tidak bisa mendapatkan kartu seri, maka akan mendapatkan nilai minus sesuai poin kartu</li>
-                      <li>Jika sampai akhir putaran pemain tidak bisa mendapatkan kartu seri dan memiliki kartu joker, maka akan mendapatkan nilai minus sesuai poin kartu ditambah minus kartu joker, diantaranya</li>
-                      <ol type="i">
-                        <li>Joker angka bernilai -50</li>
-                        <li>Joker kerajaan bernilai -100</li>
-                        <li>Joker ace bernilai -150</li>
-                      </ol>
+                      <li>Sampai mencapai urutan 4 besar selesai (done).</li>
+                      <li>Hyper akan diusahakan mencapai bintang 3.</li>
+                      <li>Jika gagal, akan dicoba sebanyak 5 kali.</li>
+                      <li>Permintaan yang dianggap <span class="text-warning fw-bold">TIDAK MASUK AKAL</span> oleh Jefri Nicho akan <span class="text-warning fw-bold">DIKEMBALIKAN</span> (dipotong biaya admin Sosiabuzz dan bank).</li>
+                      <li>Permintaan yang sama tidak akan diulang lebih dari 5 kali, berapa pun nominalnya!</li>
                     </ol>
                   </li>
                   <li class="mb-3 text-warning fw-bold">
-                    <span>Tata Cara Bermain</span>
-                    <p class="text-white fw-normal">
-                      Segera ...
-                    </p>
+                    <span>Paket Murah Meriah 30K</span>
+                    <p class="text-white fw-normal">Dapatkan poin tertinggi pada setiap permainan.</p>
+                    <ol type="a" class="text-white fw-normal">
+                      <li>Permintaan yang dianggap <span class="text-warning fw-bold">TIDAK MASUK AKAL</span> oleh Jefri Nicho akan <span class="text-warning fw-bold">DIKEMBALIKAN</span> (dipotong biaya admin Sosiabuzz dan bank).</li>
+                      <li>Hanya diberikan <span class="text-warning fw-bold">1x</span> percobaan.</li>
+                    </ol>
+                  </li>
+                  <li class="mb-3 text-warning fw-bold">
+                    <span>Ketentuan Tambahan</span>
+                    <ol type="a" class="text-white fw-normal">
+                      <li><span class="fw-bold text-warning">Paket Kapitalis</span> akan menggeser antrian <span class="text-warning fw-bold">Paket Murah Meriah</span>.</li>
+                      <li><span class="text-warning fw-bold">Paket Murah Meriah</span> akan dikerjakan setelah pengerjaan 2 <span class="fw-bold text-warning">Paket Kapitalis</span> dan seterusnya.</li>
+                      <li>Permintaan yang masuk setelah penutupan request akan dikerjakan pada stream berikutnya.</li>
+                      <li>Hanya menerima request sesuai ketentuan yang tertulis di atas.</li>
+                    </ol>
                   </li>
                 </ol>
               </div>
@@ -265,9 +299,6 @@
 
 // import { db } from '@/utils/firebase';
 // import { doc, setDoc, getDocs, addDoc, collection, where, deleteDoc, query, orderBy } from "firebase/firestore";
-
-import simplebar from 'simplebar-vue';
-import 'simplebar-vue/dist/simplebar.min.css';
 
 import draggable from "vuedraggable";
 
@@ -331,6 +362,20 @@ export default {
         hero: leomord,
         status: 'ongoing',
         is_vip: false,
+      },
+      {
+        id: 5,
+        name: 'Agus',
+        hero_name: 'Leomord',
+        commander: 'Zilong',
+        commander_skill: 2,
+        emblem: [
+          new URL('@/assets/images/emblem/cadia.png', import.meta.url).href,
+          new URL('@/assets/images/emblem/marksman.png', import.meta.url).href
+        ],
+        hero: leomord,
+        status: 'ongoing',
+        is_vip: false,
       }],
       fetching: false,
       items: [
@@ -381,37 +426,3 @@ export default {
   }
 }
 </script>
-<style>
-.draggable-list {
-  display: flex;
-  flex-direction: row; /* Atur horizontal */
-  gap: 20px; /* Jarak antar item */
-  overflow-y: hidden; /* Tambahkan scroll jika item terlalu banyak */
-  overflow-x: auto; /* Tambahkan scroll jika item terlalu banyak */
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #ccc transparent;
-}
-
-.draggable-item {
-  cursor: grab;
-  user-select: none; /* Nonaktifkan seleksi teks saat drag */
-}
-
-.draggable-item:active {
-  cursor: grabbing; /* Ubah kursor saat sedang drag */
-}
-
-.bg-texture {
-  background-image: url('@/assets/images/texture.jpeg'); /* Path ke file tekstur */
-  background-size: cover; /* Menyesuaikan ukuran */
-  background-repeat: no-repeat; /* Tidak mengulang tekstur */
-  background-position: center; /* Pusatkan gambar */
-}
-
-.bg-texture-2 {
-  background-image: url('@/assets/images/texture-2.jpeg'); /* Path ke file tekstur */
-  background-size: cover; /* Menyesuaikan ukuran */
-  background-repeat: no-repeat; /* Tidak mengulang tekstur */
-  background-position: center; /* Pusatkan gambar */
-}
-</style>

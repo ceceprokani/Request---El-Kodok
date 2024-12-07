@@ -8,6 +8,11 @@ body {
     border-radius: 15px !important;
 }
 
+
+.custom-rounded-medium {
+    border-radius: 10px !important;
+}
+
 .custom-rounded-card-header {
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important;
@@ -95,6 +100,206 @@ input[type="number"] {
 
 .bg-transparant {
     background: rgba(0, 0, 0, 0.5) !important;    
+}
+
+.table-custom-card {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0 0.5rem;
+}
+
+.table-custom-card tr {
+    outline: 1px solid #f0f0f0;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.table-custom-card tr>th {
+    padding: 1rem 0.8rem;
+    background-color: white !important;
+}
+
+.table-custom-card tr>th:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.table-custom-card tr>th:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.table-custom-card tr>td {
+    padding: 1rem 0.8rem;
+    background-color: white !important;
+}
+
+.table-custom-card .middle-item {
+    vertical-align: middle !important;
+}
+
+.table-custom-card tr>td:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.table-custom-card tr>td:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.table-custom-card-dark {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0 0.5rem;
+}
+
+.table-custom-card-dark tr {
+    outline: 1px solid #6c757d;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.table-custom-card-dark tr>th {
+    padding: 1rem 0.8rem;
+    background-color: #6c757d !important;
+    color: white;
+    border: none;
+}
+
+.table-custom-card-dark tr>th:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.table-custom-card-dark tr>th:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.table-custom-card-dark tr>td {
+    padding: 1rem 0.8rem;
+    background-color: #6c757d !important;
+    color: white;
+    border: none;
+}
+
+.table-custom-card-dark .middle-item {
+    vertical-align: middle !important;
+}
+
+.table-custom-card-dark tr>td:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.table-custom-card-dark tr>td:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.draggable-list {
+  display: flex;
+  flex-direction: row; /* Atur horizontal */
+  gap: 20px; /* Jarak antar item */
+  overflow-y: hidden; /* Tambahkan scroll jika item terlalu banyak */
+  overflow-x: visible; /* Tambahkan scroll jika item terlalu banyak */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #ccc transparent;
+  padding-bottom: 30px;
+}
+
+.draggable-item {
+  cursor: grab;
+  user-select: none; /* Nonaktifkan seleksi teks saat drag */
+  min-width: 300px;
+}
+
+.draggable-item:active {
+  cursor: grabbing; /* Ubah kursor saat sedang drag */
+}
+
+.bg-texture {
+  background-image: url('@/assets/images/texture.jpeg'); /* Path ke file tekstur */
+  background-size: cover; /* Menyesuaikan ukuran */
+  background-repeat: no-repeat; /* Tidak mengulang tekstur */
+  background-position: center; /* Pusatkan gambar */
+}
+
+.bg-texture-2 {
+  background-image: url('@/assets/images/texture-2.jpeg'); /* Path ke file tekstur */
+  background-size: cover; /* Menyesuaikan ukuran */
+  background-repeat: no-repeat; /* Tidak mengulang tekstur */
+  background-position: center; /* Pusatkan gambar */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #181818; /* Dark background */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 20px 10px;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #b3b3b3; /* Subtle gray text */
+  margin-bottom: 15px;
+}
+
+/* Social Icons */
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1e90ff; /* Highlight color */
+}
+
+.text-small {
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 0 15px;
+  }
 }
 
 /* Tablet: untuk layar dengan lebar minimal 768px */
